@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/IBM-Cloud/power-go-client/errors"
+	"github.com/IBM-Cloud/power-go-client/helpers"
 
 	"github.com/IBM-Cloud/power-go-client/ibmpisession"
 	"github.com/IBM-Cloud/power-go-client/power/client/p_cloud_networks"
@@ -65,6 +66,18 @@ func (f *IBMPINetworkClient) Create(name string, networktype string, cidr string
 
 	if err != nil || resp == nil || resp.Payload == nil {
 		return nil, fmt.Errorf(errors.CreateNetworkOperationFailed, name, err)
+	}
+
+	return resp.Payload, nil
+}
+
+// Create ...
+func (f *IBMPINetworkClient) CreateWithBody(body *models.NetworkCreate, cloudInstanceId string) (*models.Network, error) {
+	params := p_cloud_networks.NewPcloudNetworksPostParamsWithTimeout(helpers.PICreateTimeOut).WithCloudInstanceID(cloudInstanceId).WithBody(body)
+	_, resp, err := f.session.Power.PCloudNetworks.PcloudNetworksPost(params, ibmpisession.NewAuth(f.session, cloudInstanceId))
+
+	if err != nil || resp == nil || resp.Payload == nil {
+		return nil, fmt.Errorf(errors.CreateNetworkOperationFailed, body.Name, err)
 	}
 
 	return resp.Payload, nil
