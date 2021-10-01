@@ -88,20 +88,21 @@ const (
 
 	// IBM PI Image
 
-	PIImageName           = "pi_image_name"
-	PIImageId             = "pi_image_id"
-	PIImageAccessKey      = "pi_image_access_key"
-	PIImageSecretKey      = "pi_image_secret_key"
-	PIImageSource         = "pi_image_source"
-	PIImageBucketName     = "pi_image_bucket_name"
-	PIImageBucketAccess   = "pi_image_bucket_access"
-	PIImageBucketFileName = "pi_image_bucket_file_name"
-	PIImageBucketRegion   = "pi_image_bucket_region"
-	PIImageStorageType    = "pi_image_storage_type"
-	PIImageDisk           = "pi_image_disk"
-	PIImageCopyID         = "pi_image_copy_id"
-	PIImagePath           = "pi_image_path"
-	PIImageOsType         = "pi_image_os_type"
+	PIImageName            = "pi_image_name"
+	PIImageId              = "pi_image_id"
+	PIImageAccessKey       = "pi_image_access_key"
+	PIImageSecretKey       = "pi_image_secret_key"
+	PIImageSource          = "pi_image_source"
+	PIImageBucketName      = "pi_image_bucket_name"
+	PIImageBucketAccess    = "pi_image_bucket_access"
+	PIImageBucketFileName  = "pi_image_bucket_file_name"
+	PIImageBucketRegion    = "pi_image_bucket_region"
+	PIImageStorageAffinity = "pi_image_storage_affinity"
+	PIImageStoragePool     = "pi_image_storage_pool"
+	PIImageStorageType     = "pi_image_storage_type"
+	PIImageCopyID          = "pi_image_copy_id"
+	PIImagePath            = "pi_image_path"
+	PIImageOsType          = "pi_image_os_type"
 
 	// IBM PI Key
 
@@ -181,6 +182,14 @@ const (
 	JobStatusFailed             = "failed"
 	JobStatusRunning            = "running"
 	JobStatusWaiting            = "waiting"
+
+	// IBM PI DHCP
+	PIDhcpId          = "pi_dhcp_id"
+	PIDhcpStatus      = "pi_dhcp_status"
+	PIDhcpNetwork     = "pi_dhcp_network"
+	PIDhcpLeases      = "pi_dhcp_leases"
+	PIDhcpInstanceIp  = "pi_dhcp_instance_ip"
+	PIDhcpInstanceMac = "pi_dhcp_instance_mac"
 
 	// IBM PI Placement Groups
 
